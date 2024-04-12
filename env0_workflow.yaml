@@ -1,0 +1,17 @@
+environments:
+  EKSCluster:
+    name: 'EKS Cluster'
+    templateName: 'EKS cluster creation using Terraform'
+  EKSNodegroup:
+    name: 'EKS Nodegroup'
+    templateName: 'EKS NodeGroup creation'
+    needs:
+      - EKSCluster
+  ARGOCD-Install:
+    name: 'ARGOCD-Install'
+    templateName: 'ArgoCD install on EKS'
+    needs:
+      - EKSCluster
+	  - EKSNodegroup
+settings:
+  environmentRemovalStrategy: destroy
