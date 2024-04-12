@@ -12,6 +12,6 @@ environments:
     templateName: 'ArgoCD install on EKS'
     needs:
       - EKSCluster
-	  - EKSNodegroup
+      - EKSNodegroup
 settings:
   environmentRemovalStrategy: destroy
