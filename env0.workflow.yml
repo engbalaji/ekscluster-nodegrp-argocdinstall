@@ -1,15 +1,15 @@
 environments:
   EKSCluster:
-    name: 'EKS Cluster'
-    templateName: 'EKS cluster creation using Terraform'
+    name: 'EKSCluster'
+    templateName: 'eks_cluster_creation'
   EKSNodegroup:
     name: 'EKS Nodegroup'
-    templateName: 'EKS NodeGroup creation'
+    templateName: 'eks_nodegrp_creation'
     needs:
       - EKSCluster
   ARGOCD-Install:
     name: 'ARGOCD-Install'
-    templateName: 'ArgoCD install on EKS'
+    templateName: 'argocd_install_exiseks'
     needs:
       - EKSCluster
       - EKSNodegroup
